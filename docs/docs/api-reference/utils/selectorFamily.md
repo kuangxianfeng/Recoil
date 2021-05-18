@@ -131,7 +131,7 @@ const Component1 = () => {
   const [value, onChange] = useRecoilState(formFieldState('field1'));
   return (
     <>
-      <input value={value} onChange={onChange} />
+      <input value={value} onChange={e => onChange(e.target.value)} />
       <Component2 />
     </>
   );
@@ -140,7 +140,7 @@ const Component1 = () => {
 const Component2 = () => {
   const [value, onChange] = useRecoilState(formFieldState('field2'));
   return (
-    <input value={value} onChange={onChange} />
+    <input value={value} onChange={e => onChange(e.target.value)} />
   );
 }
 ```
